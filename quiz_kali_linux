@@ -1,0 +1,145 @@
+#!/bin/bash
+echo "----------------------------------WELCOME---------------------------------------"
+echo "Put your name : "
+read name
+now="$(date +'%d/%m/%Y:%T')"
+echo "Welcome Mr. $name "
+echo -e "\e[1m[+] QUESTION -1-\e[0m" 
+echo "Birthday of Kali Linux"
+read rep
+score=0
+if [[ ($rep == "13/03/2013")]]; then 
+((score=$score+1)) 
+else
+wrong+=" | Q1 "
+fi 
+echo -e "\e[1m[+] QUESTION -2-\e[0m" 
+echo "For the Tools : ------------------------------------------- "
+echo "John The Ripper used for"
+echo "a -  Wireless attack"
+echo "b -  password cracking "
+echo "c -  browsing"
+read rep
+if [[ ($rep == "b")]]; then 
+((score=$score+1))
+else
+wrong+=" | Q2 "
+fi
+echo -e "\e[1m[+] QUESTION -3-\e[0m" 
+echo "Hydra is "
+echo "a - a program who control DataBases and sql"
+echo "b - a addons for browser "
+echo "c - a parallelized network logon cracker"
+read rep
+if [[ ($rep == "c")]]; then 
+((score=$score+1))
+else 
+wrong+=" | Q3 "
+fi
+echo -e "\e[1m[+] QUESTION -4-\e[0m" 
+echo "crunch used for  "
+echo "a - Generate wordlist"
+echo "b - attack zip file"
+echo "c - attack network"
+read rep
+if [[ ($rep == "a")]]; then 
+((score=$score+1))
+else
+wrong+=" | Q4 "
+fi
+echo -e "\e[1m[+] QUESTION -5-\e[0m" 
+echo "sqlmap used for   "
+echo "a - sql injection"
+echo "b - crack password"
+echo "c - attack network"
+read rep
+if [[ ($rep == "a")]]; then 
+((score=$score+1))
+else 
+wrong+=" | Q5 "
+fi
+echo -e "\e[1m[+] QUESTION -6-\e[0m" 
+echo "What is  Best Database Management Systems (DBMS)"
+echo "a - MariaDB"
+echo "b - oracle Database"
+echo "c - MySql"
+read rep
+if [[ ($rep == "b")]]; then 
+((score=$score+1))
+else 
+wrong+=" | Q6 "
+fi
+echo -e "\e[1m[+] QUESTION -7-\e[0m" 
+echo "The best tools for  Wireless attack in  Kali Linux "
+echo "a - aircrack-ng"
+echo "b - BeEf"
+echo "c - burpsuite"
+read rep
+if [[ ($rep == "a")]]; then 
+((score=$score+1))
+else 
+wrong+=" | Q7 "
+fi
+echo -e "\e[1m[+] QUESTION -8-\e[0m" 
+echo "Best Linux Photo/Image Editor"
+echo "a - Adobe Photoshop"
+echo "b - Affinity Photo"
+echo "c - GIMP"
+read rep
+if [[ ($rep == "c")]]; then 
+((score=$score+1))
+else 
+wrong+=" | Q8 "
+fi
+echo -e "\e[1m[+] QUESTION -9-\e[0m" 
+echo "The tool Medusa is like "
+echo "a - John The Ripper"
+echo "b - Hydra"
+echo "c - aircrack-ng"
+read rep
+if [[ ($rep == "b")]]; then 
+((score=$score+1))
+else 
+wrong+=" | Q9 "
+fi
+echo -e "\e[1m[+] QUESTION -10-\e[0m" 
+echo "How much you love This Shell"
+echo "a - +"
+echo "b - +++"
+echo "c - +++++"
+read rep 
+if [[ ($rep == "a")]]; then
+avis+=" One star | +"
+elif [[ ($rep == "b")]]; then 
+avis+=" Three stars | +++"
+else 
+avis+=" Five stars | +++++"
+fi
+((score=$score+1))
+echo -e "\e[31m[+] Calculating your result:"
+echo -ne '                          (01%)\r'
+sleep 1
+echo -ne ' #                         (10%)\r'
+sleep 1
+echo -ne ' ###                       (20%)\r'
+sleep 1
+echo -ne ' #####                     (33%)\r'
+sleep 1
+echo -ne ' #######                   (40%)\r'
+sleep 1
+echo -ne ' #############             (66%)\r'
+sleep 1
+echo -ne ' #################         (80%)\r'
+sleep 1
+echo -ne ' #######################   (100%)\r\e[0m'
+echo -ne '\n' 
+sleep 1
+if [[ ($wrong == "") ]]; then 
+echo "Your score is : $score/10"
+echo -e "Name: ${name^^} ====> Time:  $now ====> Score: $score/5 \nRated by $name : $avis">> /home/$USER/log1.txt
+else
+echo "Your score is : $score/10"
+echo "Your Wrong in : $wrong |"
+echo -e "Name: ${name^^}  ====> Time: $now ====> Score: $score/5 \nThe wrong in : $wrong \nRated by $name : $avis">> /home/$USER/log2.txt
+fi
+
